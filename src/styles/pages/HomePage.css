@@ -1,0 +1,70 @@
+.contenairPresentation{
+    padding-top: 100px;
+}
+
+.titrePrincipal{
+    color: #E8E000;
+}
+
+.textPresensation{
+    color: white;
+    font-weight: bold;
+    margin: 20px 0px 20px 0px;
+}
+
+ul {
+    color: white;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.contenairPrincipal{
+    display: flex;
+    justify-content: space-around;
+}
+
+.tennisPlayer{
+    height: 700px;
+
+}
+
+#titreRecherche{
+    margin-top: 100px;
+    color: white;
+
+}
+
+.contenairRecherche {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #03045E;
+    margin: 20px;
+    border: 3px white solid;
+    border-radius: 10px;
+    max-width: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contenairRecherche:hover {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #03045E;
+    margin: 20px;
+    border: 3px #E8E000 solid;
+    border-radius: 10px;
+    max-width: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pratiqueRecherche{
+    color: #E8E000;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#contenairRecherchePratique {
+    display: flex;
+}
