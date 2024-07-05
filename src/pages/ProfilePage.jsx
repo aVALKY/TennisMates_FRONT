@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ProfilePage = () => {
+const PorifilePage = () => {
   return (
-    <div>ProfilePage</div>
+    <div>PorifilePage</div>
   )
 }
 
-export default ProfilePage;
+export default PorifilePage

@@ -1,0 +1,50 @@
+.carteUtilisateur {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: black 3px solid;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+    width: 100%;
+    max-width: 400px;
+    font-size: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 10px;
+    transition: border 0.3s, background-color 0.3s;
+  }
+  
+  .carteUtilisateur:hover {
+    border: 3px #E8E000 solid;
+    background-color: #D9D9D9;
+  }
+  
+  .utilisateurPrenom {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .userLogo {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .profilesClassement,
+  .utilisateurVille {
+    margin-bottom: 10px;
+  }
+  
+
+  @media (min-width: 768px) {
+    .carteUtilisateur {
+      width: 45%; 
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .carteUtilisateur {
+      width: 30%; 
+    }
+  }

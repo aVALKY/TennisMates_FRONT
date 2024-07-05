@@ -1,12 +1,12 @@
-.contenairPresentation{
+.contenairPresentation {
     padding-top: 100px;
 }
 
-.titrePrincipal{
+.titrePrincipal {
     color: #E8E000;
 }
 
-.textPresensation{
+.textPresensation {
     color: white;
     font-weight: bold;
     margin: 20px 0px 20px 0px;
@@ -18,23 +18,21 @@ ul {
     margin-left: 30px;
 }
 
-.contenairPrincipal{
+.contenairPrincipal {
     display: flex;
     justify-content: space-around;
 }
 
-.tennisPlayer{
+.tennisPlayer {
     height: 700px;
-
 }
 
-#titreRecherche{
-    margin-top: 100px;
+#titreRecherche {
+    margin-top: 50px;
     color: white;
-
 }
 
-.contenairRecherche {
+button.contenairRecherche {
     cursor: pointer;
     padding: 10px;
     background-color: #03045E;
@@ -45,21 +43,27 @@ ul {
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-.contenairRecherche:hover {
-    cursor: pointer;
-    padding: 10px;
-    background-color: #03045E;
-    margin: 20px;
-    border: 3px #E8E000 solid;
-    border-radius: 10px;
-    max-width: 150px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    outline: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
 }
 
-.pratiqueRecherche{
+button.contenairRecherche:hover,
+button.contenairRecherche:focus {
+    border: 3px #E8E000 solid;
+}
+
+button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+.pratiqueRecherche {
     color: #E8E000;
     font-weight: bold;
     font-size: 30px;
@@ -67,4 +71,163 @@ ul {
 
 #contenairRecherchePratique {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#contenairLocalisation {
+    background-color: #F8F9FA;
+    border-radius: 10px;
+    display: flex;
+}
+
+#titreLocalisation {
+    margin: 10px 0px 0px 20px;
+    padding: 20px;
+}
+
+#inputRenseignement {
+    margin: 0px 0px 20px 30px;
+    padding: 10px;
+    border: none;
+    background-color: #F8F9FA;
+    font-size: 20px;
+}
+
+#border {
+    border: 1px black solid;
+    margin: 20px;
+}
+
+#rayonKm {
+    margin-top: 20px;
+}
+
+#contenairRayon {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0px 0px 20px;
+    font-weight: bold;
+}
+
+#BoutonResultatRecherche {
+    margin: 40px 0px 0px 60px;
+    padding: 20px 30px;
+    color: black;
+    font-weight: bold;
+    border: none;
+    background-color: #DEE2E6;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border: 2px #F8F9FA solid;
+}
+
+#BoutonResultatRecherche:hover {
+    border: 2px #03045E solid;
+}
+
+#bordureBlanche {
+    border-top: 2px white solid;
+    margin: 50px 100px;
+}
+
+#titreResultat {
+    text-align: center;
+    font-weight: bold;
+    color: #E8E000;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.contenairCarte {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 90%;
+    margin: auto;
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .contenairPrincipal {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .contenairPresentation {
+        width: 100%;
+    }
+
+    .tennisPlayer {
+        height: 500px;
+    }
+
+    #contenairRecherchePratique {
+        flex-direction: row; 
+        justify-content: center; 
+    }
+
+    .contenairRecherche {
+        max-width: 100%;
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    #contenairLocalisation {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #titreLocalisation {
+        margin: 10px 0;
+    }
+
+    #contenairRayon {
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #BoutonResultatRecherche {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    #bordureBlanche {
+        margin: 20px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenairPrincipal {
+        padding: 10px;
+    }
+
+    .contenairPresentation {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .tennisPlayer {
+        display: none;
+    }
+
+    .titrePrincipal {
+        font-size: 2rem;
+    }
+
+    .pratiqueRecherche {
+        font-size: 20px;
+    }
+
+    #contenairLocalisation {
+        width: 100%;
+    }
+
+    #inputRenseignement {
+        width: 80%;
+    }
 }

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.navbar {
+.barre-navigation {
     background-color: #03045E;
     display: flex;
     justify-content: space-between;
@@ -12,96 +12,126 @@
     padding: 20px;
 }
 
-.titleNavbar {
-    font-size: 3rem; 
-    font-weight: bold;
-    margin: 100px;
+.navigation-gauche {
+    display: flex;
+    align-items: center;
 }
 
-.titleYellow {
+.titre-navigation {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.titre-jaune {
     color: yellow;
 }
 
-.titleWhite {
+.titre-blanc {
     color: white;
 }
 
-.LogoNavbar {
+.logo-navigation {
     height: 70px;
+    margin-left: 20px;
 }
 
-.UserLogo {
-    height: 40px;
-    margin-right: 20px;
+.logo-utilisateur {
+    height: 20px;
 }
 
-.navbarRechercher{
-    margin-right: 100px;
-    background: none;
-    border: none;
+.container-connexion-recherche {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.lien-navigation {
     color: white;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-.navbarConnexion {
-    margin-right: 110px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: bold;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
 }
 
-/* Media queries pour les écrans de taille moyenne */
+.lien-navigation span {
+    margin-left: 5px;
+}
+
+@media (max-width: 1024px) {
+    .titre-navigation {
+        font-size: 2.5rem;
+    }
+
+    .logo-navigation {
+        height: 60px;
+    }
+
+    .logo-utilisateur {
+        height: 25px;
+    }
+
+    .lien-navigation {
+        margin: 0 10px;
+        font-size: 18px;
+    }
+}
+
 @media (max-width: 768px) {
-    .titleNavbar {
-        font-size: 20px; 
-        margin: 10px 0; 
+    .barre-navigation {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
     }
 
-    .LogoNavbar {
-        height: 30px;
+    .navigation-gauche {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
     }
 
-    .UserLogo {
-        height: 15px; 
+    .titre-navigation {
+        font-size: 2rem;
+        margin: 0 10px 0 0;
     }
 
-    .navbarRechercher {
-        margin-right: 10px;
-        font-size: 20px;
+    .logo-navigation {
+        height: 50px;
+        margin: 0;
     }
 
-    .navbarConnexion{
-        margin-right: 10px;
-        font-size: 20px;
+    .container-connexion-recherche {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
     }
-}
 
-/* Media queries pour les petits écrans */
-@media (max-width: 480px) {
-    .titleNavbar {
-        font-size: 10px;
+    .lien-navigation {
         margin: 5px 0;
+        font-size: 16px;
     }
 
-    .LogoNavbar {
-        height: 10px;
-        width: 10px;
-    }
-
-    .UserLogo {
-        height: 10px;
-    }
-
-    .navbarRechercher {
+    .lien-navigation span {
         display: none;
     }
+}
 
-    .navbarConnexion {
-        font-size: 10px;
+@media (max-width: 480px) {
+    .titre-navigation {
+        font-size: 1.5rem;
     }
 
+    .logo-navigation {
+        height: 40px;
+    }
+
+    .logo-utilisateur {
+        height: 20px;
+    }
+
+    .lien-navigation {
+        font-size: 14px;
+    }
 }
