@@ -1,7 +1,7 @@
 import React from 'react';
 import userLogo from "../Assets/Logo/USER_ACCOUNT.png";
 
-const UserCard = ({ utilisateur, profile }) => {
+const UtilisateurCarte = ({ utilisateur, profile }) => {
   return (
     <div className="carteUtilisateur">
       <div className="utilisateurPrenom">{utilisateur.UT_Prenom}</div>
@@ -12,4 +12,4 @@ const UserCard = ({ utilisateur, profile }) => {
   );
 }
 
-export default UserCard;
+export default UtilisateurCarte;
