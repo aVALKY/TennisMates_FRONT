@@ -38,7 +38,7 @@ const InscriptionPage = () => {
       })
       .then((response) => {
         toast.success(response.data.message);
-        navigate('/ConnexionPage');
+        navigate('/InfoProfilePage');
       })
       .catch((error) => {
         toast.error(error.message);

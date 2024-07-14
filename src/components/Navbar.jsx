@@ -15,7 +15,7 @@ const Navbar = () => {
       </div>
       <ul className="container-connexion-recherche">
         <li>
-          <a className="lien-navigation" href="/homePage">
+          <a className="lien-navigation" href="/AccueilPage">
             <span>RECHERCHER</span>
           </a>
         </li>

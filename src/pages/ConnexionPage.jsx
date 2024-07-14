@@ -18,19 +18,18 @@ const ConnexionPage = () => {
   }
 
   const connexion = () => {
-    console.log(UT_Email, UT_Motdepasse);
     instance
       .post("/authenticate/login", {
         UT_Email,
         UT_Motdepasse
-      } )
+      })
       .then((response) => {
         localStorage.setItem("token", response.data.token);
-        toast.success(response.data.message);
-        navigate('/HomePage');
+        toast.success("Connexion réussie");
+        navigate('/AccueilPage');
       })
       .catch((error) => {
-        toast.error(error.message);
+        toast.error("Erreur de connexion");
         console.log(error);
       });
   }

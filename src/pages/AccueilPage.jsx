@@ -1,32 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
-import '../styles/pages/HomePage.css';
+import '../styles/pages/AccueilPage.css';
 import tennisPlayer from "../Assets/images/Tennis_Player.png";
 import logoRaquette from "../Assets/Logo/raquette.png";
 import UtilisateurService from '../Services/UtilisateurService';
-import ProfileService from '../Services/ProfileService';
 import UserCard from '../components/UtilisateurCarte';
 import '../styles/components/UtilisateurCarte.css';
 
-const HomePage = () => {
+const AccueilPage = () => {
   // State
   const [utilisateurs, setUtilisateurs] = useState([]);
-  const [profiles, setProfiles] = useState([]);
   const [showResults, setShowResults] = useState(false);
-  const [filteredUser, setFilteredUser] = useState([]);
+  const [filteredUsers, setFilteredUsers] = useState([]);
   const [query, setQuery] = useState ([]);
 
   // Comportement
-  const fetchProfiles = async () => {
-    try {
-      const response = await ProfileService.getAllProfile();
-      setProfiles(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const fetchAllUtilisateurs = async () => {
+
     try {
       const response = await UtilisateurService.getAllUtilisateur();
       setUtilisateurs(response.data);
@@ -41,22 +31,16 @@ const HomePage = () => {
     setQuery(value)
   }
   const handleSubmit = () => {
-    const userfilter = utilisateurs.filter((utilisateur ) => {
+    const userfilters = utilisateurs.filter((utilisateur) => {
       return utilisateur.UT_Ville.toLowerCase().includes(query) || utilisateur.UT_Codepostal.toLowerCase().includes(query)
     })
-    setFilteredUser(userfilter)
+    setFilteredUsers(userfilters)
   }
 
-  const findProfileForUser = (userId) => {
-    return profiles.find(profile => profile.userId === userId) || {};
-  };
-
   useEffect(() => {
-    fetchProfiles();
     fetchAllUtilisateurs();
   }, []);
 
-  // Affichage
   return (
     <div>
       <Navbar />
@@ -108,10 +92,10 @@ const HomePage = () => {
         <>
           <h2 id="titreResultat">Résultats : </h2>
           <div className="contenairCarte">
-            {filteredUser.map((utilisateur) => {
-              const profile = findProfileForUser(utilisateur.id);
+            {filteredUsers.map((utilisateur) => {
+              const profile = utilisateur.Profile;
               return (
-                <UserCard key={utilisateur.id} utilisateur={utilisateur} profile={profile} />
+              <UserCard key={utilisateur.id} utilisateur={utilisateur} profile={profile}/>
               );
             })}
           </div>
@@ -121,4 +105,4 @@ const HomePage = () => {
   );
 }
 
-export default HomePage;
+export default AccueilPage;
