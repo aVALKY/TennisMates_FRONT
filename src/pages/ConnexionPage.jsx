@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import '../styles/pages/ConnexionPage.css';
 import instance from '../api/axios';
 import { toast } from 'react-toastify';
+import { ContexteAuth } from '../context/AuthContext';
 
 const ConnexionPage = () => {
   
@@ -11,6 +12,7 @@ const ConnexionPage = () => {
   const [UT_Email, setUT_Email] = useState("");
   const [UT_Motdepasse, setUT_Motdepasse] = useState("");
   const navigate = useNavigate();
+  const { connexion: login } = useContext(ContexteAuth);
 
   // Comportement
   const inscriptionRedirect = () => {
@@ -24,8 +26,10 @@ const ConnexionPage = () => {
         UT_Motdepasse
       })
       .then((response) => {
-        localStorage.setItem("token", response.data.token);
-        toast.success("Connexion réussie");
+        const { token, utilisateur } = response.data;
+        
+        localStorage.setItem("token", token);
+        login(utilisateur);
         navigate('/AccueilPage');
       })
       .catch((error) => {

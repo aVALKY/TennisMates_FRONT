@@ -9,7 +9,7 @@ class ProfileService{
         })
     }
 
-    static getProfileById () {
+    static getProfileById (PR_ID) {
         return axios.get("http://127.0.0.1:3000/Profiles/"+PR_ID, {
             headers: {
                 Authorization: localStorage.getItem("token")

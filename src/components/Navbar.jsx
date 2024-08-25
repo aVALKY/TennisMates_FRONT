@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import logo from "../Assets/images/Tennis_ball.png";
 import userLogo from "../Assets/Logo/USER_ACCOUNT.png";
 import "../styles/components/Navbar.css";
+import { ContexteAuth } from '../context/AuthContext';
 
 const Navbar = () => {
+  const { utilisateur, deconnexion } = useContext(ContexteAuth);
+
   return (
     <nav className="barre-navigation">
       <div className="navigation-gauche">
@@ -15,19 +19,31 @@ const Navbar = () => {
       </div>
       <ul className="container-connexion-recherche">
         <li>
-          <a className="lien-navigation" href="/AccueilPage">
+          <Link className="lien-navigation" to="/AccueilPage">
             <span>RECHERCHER</span>
-          </a>
+          </Link>
         </li>
-        <li>
-          <a className="lien-navigation" href="/connexionPage">
-            <img src={userLogo} alt="Logo Utilisateur" className="logo-utilisateur" />
-            <span>CONNEXION</span>
-          </a>
-        </li>
+        {utilisateur ? (
+          <li className="user-menu">
+            <Link to="/MonProfil" className="lien-navigation">
+              <img src={userLogo} alt="Logo Utilisateur" className="logo-utilisateur" />
+              <span>{utilisateur.UT_Prenom}</span>
+            </Link>
+            <button className="btn-deconnexion" onClick={deconnexion}>Déconnexion</button>
+          </li>
+        ) : (
+          <li>
+            <Link className="lien-navigation" to="/ConnexionPage">
+              <img src={userLogo} alt="Logo Utilisateur" className="logo-utilisateur" />
+              <span>CONNEXION</span>
+            </Link>
+          </li>
+        )}
       </ul>
     </nav>
   );
 }
 
 export default Navbar;
+
+

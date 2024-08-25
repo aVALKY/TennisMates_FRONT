@@ -15,15 +15,18 @@ const InscriptionPage = () => {
   const [UT_Prenom, setUT_Prenom] = useState("");
   const [UT_Ville, setUT_Ville] = useState("");
   const [UT_Codepostal, setUT_Codepostal] = useState("");
+  const [PR_Tennisniveau, setPR_Tennisniveau] = useState("");
+  const [PR_Padelniveau, setPR_Padelniveau] = useState("");
+  const [PR_Description, setPR_Description] = useState("");
   const [complet, setComplet] = useState(false);
 
   useEffect(() => {
-    if (UT_Email && UT_Motdepasse && UT_Nom && UT_Prenom && UT_Ville && UT_Codepostal) {
+    if (UT_Email && UT_Motdepasse && UT_Nom && UT_Prenom && UT_Ville && UT_Codepostal && PR_Tennisniveau && PR_Padelniveau && PR_Description) {
       setComplet(true);
     } else {
       setComplet(false);
     }
-  }, [UT_Email, UT_Motdepasse, UT_Nom, UT_Prenom, UT_Ville, UT_Codepostal]);
+  }, [UT_Email, UT_Motdepasse, UT_Nom, UT_Prenom, UT_Ville, UT_Codepostal, PR_Tennisniveau, PR_Padelniveau, PR_Description]);
 
   // Comportement
   const inscription = () => {
@@ -34,11 +37,14 @@ const InscriptionPage = () => {
         UT_Nom,
         UT_Prenom,
         UT_Ville,
-        UT_Codepostal
+        UT_Codepostal,
+        PR_Tennisniveau,
+        PR_Padelniveau,
+        PR_Description
       })
       .then((response) => {
         toast.success(response.data.message);
-        navigate('/InfoProfilePage');
+        navigate('/ConnexionPage');
       })
       .catch((error) => {
         toast.error(error.message);
@@ -93,6 +99,34 @@ const InscriptionPage = () => {
             placeholder="Code Postal"
             value={UT_Codepostal}
             onChange={(e) => setUT_Codepostal(e.target.value)}
+          />
+          <select
+            className="SelectInfosProfile"
+            value={PR_Tennisniveau}
+            onChange={(e) => setPR_Tennisniveau(e.target.value)}
+          >
+            <option value="" disabled>Classement Tennis</option>
+            <option value="Débutant">Débutant</option>
+            <option value="Intermediaire">Intermediaire</option>
+            <option value="Expert">Expert</option>
+          </select>
+
+          <select
+            className="SelectInfosProfile"
+            value={PR_Padelniveau}
+            onChange={(e) => setPR_Padelniveau(e.target.value)}
+          >
+            <option value="" disabled>Classement Padel</option>
+            <option value="Débutant">Débutant</option>
+            <option value="Intermediaire">Intermediaire</option>
+            <option value="Expert">Expert</option>
+          </select>
+
+          <textarea
+            id="DescriptionProfile"
+            placeholder="Description"
+            value={PR_Description}
+            onChange={(e) => setPR_Description(e.target.value)}
           />
         </div>
         <div className="container-identification">

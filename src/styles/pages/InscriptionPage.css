@@ -55,3 +55,31 @@
 .button-inscription:hover {
     border-color: #E8E000;
 }
+#TextRenseignement{
+    text-align: center;
+    color: #E8E000;
+    margin: 20px;
+}
+
+.SelectInfosProfile {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+#DescriptionProfile{
+    width: 100%;
+    padding: 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 16px;
+
+}

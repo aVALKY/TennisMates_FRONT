@@ -1,4 +1,93 @@
-#ContenaireInformationJoueur{
-    background-color: red;
-    margin:50px;
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #003366;
+    color: white;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #002a5c;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-details {
+    flex: 1;
+}
+
+.profile-details h1 {
+    margin: 0;
+    font-size: 30px;
+    color: yellow;
+}
+
+.profile-details p {
+    margin: 5px 0;
+    font-size: 20px;
+    color: white;
+}
+
+.profile-rankings {
+    display: flex;
+    gap: 20px;
+}
+
+.ranking {
+    text-align: center;
+    background-color: #004080;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+.ranking h2 {
+    margin: 0;
+    font-size: 20px;
+    color: yellow;
+}
+
+.ranking p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.profile-description {
+    width: 100%;
+    max-width: 800px;
+    background-color: #002a5c;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.profile-description h2 {
+    margin: 0;
+    font-size: 25px;
+    color: yellow;
+}
+
+.profile-description p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: white;
+}
+.modifier-description{
+    border: 2px white solid;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 5px;
 }

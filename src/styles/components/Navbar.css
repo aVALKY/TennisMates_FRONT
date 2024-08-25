@@ -58,6 +58,20 @@
 .lien-navigation span {
     margin-left: 5px;
 }
+.btn-deconnexion {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    text-transform: uppercase;
+  }
+  
+  .btn-deconnexion:hover {
+    text-decoration: underline;
+  }
+  
 
 @media (max-width: 1024px) {
     .titre-navigation {

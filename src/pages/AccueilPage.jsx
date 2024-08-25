@@ -15,9 +15,12 @@ const AccueilPage = () => {
   const [query, setQuery] = useState ([]);
 
   // Comportement
+
+
   const fetchAllUtilisateurs = async () => {
 
     try {
+      
       const response = await UtilisateurService.getAllUtilisateur();
       setUtilisateurs(response.data);
       setShowResults(true);
@@ -26,11 +29,11 @@ const AccueilPage = () => {
     }
   };
 
-  const handleChange = (e) => {
+  const gererChangement = (e) => {
     const value = e.target.value.toLowerCase()
     setQuery(value)
   }
-  const handleSubmit = () => {
+  const gererRecherche = () => {
     const userfilters = utilisateurs.filter((utilisateur) => {
       return utilisateur.UT_Ville.toLowerCase().includes(query) || utilisateur.UT_Codepostal.toLowerCase().includes(query)
     })
@@ -41,6 +44,8 @@ const AccueilPage = () => {
     fetchAllUtilisateurs();
   }, []);
 
+  
+  // Affichage
   return (
     <div>
       <Navbar />
@@ -71,15 +76,13 @@ const AccueilPage = () => {
           <div id="contenairLocalisation">
             <div id="contenairTitreRenseignement">
               <h2 id="titreLocalisation">Localisation</h2>
-              <input type="text" id="inputRenseignement" onChange={handleChange} placeholder='Ville / Code Postal' />
+              <input type="text" id="inputRenseignement" onChange={gererChangement} placeholder='Ville / Code Postal' />
             </div>
+
             <div id="border"></div>
-            <div id="contenairRayon">
-              <span id="rayonResultat">RAYON : 0 km</span>
-              <input type="range" id="rayonKm" min="0" max="50" step="1" defaultValue="0" />
-            </div>
+
             <div>
-              <button id="BoutonResultatRecherche" onClick={handleSubmit}>Rechercher</button>
+              <button id="BoutonResultatRecherche" onClick={gererRecherche}>Rechercher</button>
             </div>
           </div>
         </div>
@@ -91,11 +94,13 @@ const AccueilPage = () => {
       {showResults && (
         <>
           <h2 id="titreResultat">Résultats : </h2>
-          <div className="contenairCarte">
-            {filteredUsers.map((utilisateur) => {
+          <div 
+              className="contenairCarte">
+              {filteredUsers.map((utilisateur) => {
               const profile = utilisateur.Profile;
               return (
-              <UserCard key={utilisateur.id} utilisateur={utilisateur} profile={profile}/>
+                <UserCard utilisateur={utilisateur} profile={profile} 
+                key={utilisateur.UT_ID}/>
               );
             })}
           </div>
