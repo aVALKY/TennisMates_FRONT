@@ -4,6 +4,7 @@ import ConnexionPage from "../pages/ConnexionPage";
 import InscriptionPage from "../pages/InscriptionPage";
 import ProfilePage from "../pages/ProfilePage";
 import MonProfilPage from '../pages/MonProfilPage';
+import SupprimerComptePage from "../pages/SupprimerComptePage";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
     path: "/MonProfil", 
     element: <MonProfilPage />, 
   },
+  {
+    path: "/supprimerCompte",
+    element: <SupprimerComptePage />
+  }
 ]);
 
 export default router;
