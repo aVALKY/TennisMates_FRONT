@@ -20,10 +20,11 @@ const AccueilPage = () => {
   const fetchAllUtilisateurs = async () => {
 
     try {
-      
+
       const response = await UtilisateurService.getAllUtilisateur();
       setUtilisateurs(response.data);
       setShowResults(true);
+      
     } catch (error) {
       console.log(error);
     }

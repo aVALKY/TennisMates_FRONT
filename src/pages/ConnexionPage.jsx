@@ -34,7 +34,6 @@ const ConnexionPage = () => {
       })
       .catch((error) => {
         toast.error("Erreur de connexion");
-        console.log(error);
       });
   }
 
